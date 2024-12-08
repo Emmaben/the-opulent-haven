@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - The Opulent Haven Lounge{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="content">
+            <h1>Let's Connect</h1>
+            <p>We’re here to make your experience exceptional.
+                <br>
+                Reach out for reservations, inquiries, or special requests.
+            </p>
+            <a href="/contact" class="reservation-button">Book Your Reservation</a>
+        </div>
+    </section>
+
+    <section class="contact-page">
+        <!-- Reservation System Section -->
+        <section class="reservation-system-section">
+            <h2>Book Your Reservation</h2>
+            <form method="POST" action="/contact" class="reservation-form">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="contact" placeholder="Contact Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="date" name="date" placeholder="Reservation Date" required>
+                <input type="time" name="time" placeholder="Reservation Time" required min="09:00" max="23:59">
+                <input type="number" name="guests" placeholder="Number of Guests" required>
+                <textarea name="special_requests" placeholder="Special Requests or Notes"></textarea>
+                <button type="submit" class="drink-button">Reserve Table</button>
+            </form>
+            <div class="reservation-message"></div> <!-- Output Message -->
+        </section>
+
+        <!-- Accessibility and Features Section -->
+        <section class="accessibility-features">
+            <h2>Accessibility & Features</h2>
+            <ul>
+                <li>Wheelchair-accessible entrance and seating</li>
+                <li>Parking available nearby</li>
+                <li>Convenient public transport access</li>
+                <li>Private rooms for special events</li>
+                <li>Complimentary Wi-Fi</li>
+            </ul>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="contact-info">
+            <h1>Contact Us</h1>
+            <p><strong>Address:</strong> 10 Colinton Rd, Edinburgh EH10 5DT</p>
+            <p><strong>Phone:</strong> <a href="tel:+441234567890">+44 1234 567 890</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@blounge.com">info@blounge.com</a></p>
+            <p><strong>Opening Hours:</strong> Monday to Sunday: 10:00 AM - 11:00 PM</p>
+        </section>
+
+        <!-- Google Map Section -->
+        <section class="google-map">
+            <h2>Find Us</h2>
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.9137288774364!2d-3.2159595241306187!3d55.93353347805725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7094d1a3ff9%3A0x63b967e8d1488094!2sEdinburgh%20Napier%20University%20Merchiston%20Campus!5e0!3m2!1sen!2suk!4v1733053528825!5m2!1sen!2suk"
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"></iframe>
+        </section>
+
+    </section>
+{% endblock %}

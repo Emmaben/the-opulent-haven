@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Subscribers - The Opulent Haven Lounge{% endblock %}
+
+{% block content %}
+    <section class="reservations-page">
+        <h1>All Our Subscriber</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Subscribed At</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subscriber in subscribers %}
+                <tr>
+                    <td>{{ subscriber.id }}</td>
+                    <td>{{ subscriber.subscribed_at }}</td>
+                    <td>{{ subscriber.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

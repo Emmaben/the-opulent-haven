@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}The Opulent Haven | Lounge{% endblock %}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/drinks.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reservations.css') }}">
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <span class="lounge-name"></span>
+            <span class="lounge-location">Edinburgh</span>
+        </div>
+        <ul class="navigation">
+            <li><a href="/" class="nav-link" onclick="toggleMenu(); setActive(event)" >Home</a></li>
+            <li><a href="/menu" class="nav-link" onclick="toggleMenu(); setActive(event)">Menu</a></li>
+            <li><a href="/drinks" class="nav-link" onclick="toggleMenu(); setActive(event)">Drink</a></li>
+            <li><a href="/contact" class="nav-link" onclick="toggleMenu(); setActive(event)">Contact</a></li>
+            <li class="header__line"></li>
+            <button id="theme-toggle" class="header__sun">
+                <i class="fa-regular fa-sun"></i>
+            </button>
+        </ul>
+        <div class="menuToggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <!-- Back-to-Top Arrow -->
+    <div id="back-to-top" class="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-subscribe">
+                <h2>Become a Member</h2>
+                <p>Subscribe to our newsletter and become a member of The Opulent Haven. Enjoy exclusive updates, events,
+                    and offers.</p>
+                <form id="subscribe-form" method="POST" action="/subscribe">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+
+                <div id="subscribe-message" class="subscription-message"></div> <!-- Output Message -->
+            </div>
+
+            <div class="footer-contact">
+                <h2>Contact Us</h2>
+                <p>10 Colinton Rd, Edinburgh EH10 5DT</p>
+                <p>Email: contact@opulenthaven.com</p>
+                <p>Phone: +44 131 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 The Opulent Haven. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    {#    <script src="{{ url_for('static', filename='js/stickyNav.js') }}"></script>#}
+    <script src="{{ url_for('static', filename='js/darkMode.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollToTop.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toggleMenu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/navActive.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fadeUpIn.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/faqQuestions.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/drinkBuilder.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/subscribeForm.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/reservationMessage.js') }}"></script>
+</body>
+</html>

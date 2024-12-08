@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Home - The Opulent Haven Lounge{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="content">
+            <h1>The Opulent Haven</h1>
+            <p>Sip, savor, and soak in Edinburgh from every
+                angle
+                <br>
+                an unforgettable experience in elegance and taste awaits.
+            </p>
+            <a href="/contact" class="reservation-button">Book Your Reservation</a>
+        </div>
+    </section>
+
+    <section class="welcome-container">
+        <h2>Welcome To The Opulent Haven</h2>
+        <div class="welcome-section">
+            <div class="welcome-text">
+                <p>Perched on the 11th floor of the iconic The Opulent Haven Edinburgh Hotel,
+                    The Opulent Haven Lounge immerses guests in the vibrant spirit of Scotland’s
+                    capital. Offering a curated selection of Gaelic cuisines,
+                    all-day dining, and direct access to the rooftop The Opulent Haven Deck,
+                    visitors enjoy breathtaking 360-degree views of Edinburgh.
+                    Whether for a meal, a drink, or to unwind, The Opulent Haven Lounge offers
+                    an unforgettable experience.
+                </p>
+            </div>
+            <div class="welcome-image">
+                <img src="{{ url_for('static', filename='images/About_Image.jpg') }}" alt="About Image" />
+            </div>
+        </div>
+    </section>
+
+    <section class="signature-experiences">
+        <h2>Our Signature Experiences</h2>
+        <div class="cards-container">
+            <div class="experience-card">
+                <img src="/static/images/View_Image.jpeg" alt="View Image">
+                <div class="card-content">
+                    <h3>Unmatched 360° Views</h3>
+                    <p>Take in the breathtaking views of Edinburgh from our exclusive
+                        rooftop deck, offering a panoramic cityscape unlike any other.
+                    </p>
+                </div>
+            </div>
+            <div class="experience-card">
+                <img src="/static/images/Food_Image.jpeg" alt="Food Image">
+                <div class="card-content">
+                    <h3>Gaelic Cuisines</h3>
+                    <p>Experience the true flavors of Scotland with our carefully
+                        curated Gaelic dishes, celebrating local ingredients and
+                        traditional recipes.
+                    </p>
+                </div>
+            </div>
+            <div class="experience-card">
+                <img src="/static/images/Event_Image.jpg" alt="Events Image">
+                <div class="card-content">
+                    <h3>Exclusive Events</h3>
+                    <p>Join us for special live music and events, celebrating
+                        the vibrant spirit of Edinburgh in a luxurious setting.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-wrapper">
+        <h2 class="header">The Opulent Haven Image Gallery</h2>
+        <div class="gallery">
+            <figure class="image-container">
+                <img src="/static/images/Gallery01.jpg" alt="Gallery Image 01" class="image"/>
+            </figure>
+            <figure class="image-container">
+                <img src="/static/images/Gallery02.jpg" alt="Gallery Image 02" class="image"/>
+            </figure>
+            <figure class="image-container">
+                <img src="/static/images/Gallery03.jpg" alt=" Gallery Image 03" class="image"/>
+            </figure>
+            <figure class="image-container">
+                <img src="/static/images/Drinks.jpeg" alt="Gallery Image 04" class="image"/>
+            </figure>
+            <figure class="image-container">
+                <img src="/static/images/Event_Image.jpg" alt="Gallery Image 05" class="image"/>
+            </figure>
+            <figure class="image-container">
+                <img src="/static/images/Food_Image.jpeg" alt="Gallery Image 06" class="image"/>
+            </figure>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What are the check-in and check-out times at The Opulent Haven Edinburgh?
+                    <span class="arrow">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Check-in is at 3 PM and check-out is at 11 AM.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Does The Opulent Haven Edinburgh allow pets?
+                    <span class="arrow">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, The Opulent Haven Edinburgh allows pets in designated areas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What are the parking options at The Opulent Haven Edinburgh?
+                    <span class="arrow">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Parking is available nearby, with valet and self-parking options.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What property amenities are available at The Opulent Haven Edinburgh?
+                    <span class="arrow">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Our amenities include a rooftop lounge, gym, and spa services.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Does The Opulent Haven Edinburgh have free Wi-Fi?
+                    <span class="arrow">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, complimentary Wi-Fi is available throughout the property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

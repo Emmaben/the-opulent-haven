@@ -1,0 +1,131 @@
+.contact-page {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reservation-system-section {
+    border-radius: 16px;
+    padding: 0 20px;
+    margin: 25px auto;
+    max-width: 85vw;
+}
+
+.reservation-system-section h2 {
+    margin-bottom: 30px;
+    font-size: var(--size-4xl);
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+input, textarea, .button {
+    width: 100%;
+    padding: 10px;
+    font-size: var(--size-base);
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+}
+
+.reservation-message {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: var(--size-sm);
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.reservation-message.success {
+    background-color: #DFF2BF; /* Light green */
+    color: #4CAF50; /* Dark green */
+}
+
+.reservation-message.error {
+    background-color: #FFBABA; /* Light red */
+    color: #D8000C; /* Dark red */
+}
+
+.contact-info p {
+    font-size: var(--size-lg);
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #e3b23c;
+    text-decoration: none;
+}
+
+.google-map iframe {
+    margin: 20px 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px; /* Adjust height for smaller screens */
+}
+
+.accessibility-features {
+    list-style: none;
+    padding: 0 20px;
+    margin: 30px;
+}
+
+.accessibility-features h2 {
+    margin-bottom: 30px;
+}
+
+.accessibility-features li {
+    font-size: var(--size-lg);
+    color: var(--clr-brown);
+    list-style: none;
+    margin: 15px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-page {
+        padding: 0 10px;
+    }
+
+    .reservation-system-section h2 {
+        font-size: var(--size-2xl);
+    }
+
+    input, textarea, button {
+        font-size: var(--size-base);
+        padding: 8px;
+    }
+
+    .accessibility-features li {
+        font-size: var(--size-base);
+        list-style: none;
+        margin: 15px 0;
+    }
+
+    .google-map iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    input, textarea, button {
+        font-size: var(--size-sm);
+        padding: 6px;
+    }
+
+    .google-map iframe {
+        height: 200px;
+    }
+
+    .accessibility-features li {
+        font-size: var(--size-sm);
+    }
+}

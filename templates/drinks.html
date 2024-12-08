@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Build Your Drink - The Opulent Haven Lounge{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="content">
+            <h1>Artful Libations</h1>
+            <p>Raise your glass to a world of crafted cocktails and fine spirits.
+                <br>
+                Experience the artistry of mixology in every sip.
+            </p>
+            <a href="/contact" class="reservation-button">Book Your Reservation</a>
+        </div>
+    </section>
+
+    <section class="menu-speech">
+        <div class="menu-image">
+            <img src="{{ url_for('static', filename='images/bar-manager.png') }}" alt="Bar Manager Image">
+        </div>
+        <div class="menu-speech-content">
+            <h2>A Word from Our Bar Manger</h2>
+            <p>
+                "Welcome to B Lounge, where every drink tells a story. We blend timeless traditions
+                with modern creativity to craft exceptional experiences. Sit back, relax, and let us
+                raise your spirits—one glass at a time."
+            </p>
+            <p>- Bar Manger Pawel Benson</p>
+        </div>
+    </section>
+
+    <section class="drinks-menu">
+        <div class="drinks-nav">
+            <ul>
+                {% for category in drinks_data.keys() %}
+                    <li><a href="#{{ category | lower | replace(' ', '-') }}">{{ category }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% for category, items in drinks_data.items() %}
+            <section id="{{ category | lower | replace(' ', '-') }}">
+                <h2>{{ category }}</h2>
+                <div class="drinks-category">
+                    {% for item in items %}
+                        <div class="drink-item">
+                            <img src="{{ url_for('static', filename='images/' + item.image) }}"
+                                 alt="{{ item.name }}" class="drink-item-image">
+                            <div class="drink-item-content">
+                                <h3>{{ item.name }}</h3>
+                                <p>{{ item.description }}</p>
+                                <p class="price">{{ item.price }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+    </section>
+
+    <section class="drink-builder">
+        <h2>Build Your Perfect Drink</h2>
+        <form id="drink-form">
+            <div class="form-group">
+                <label for="base-spirit">Choose Your Base Spirit:</label>
+                <select id="base-spirit" name="base-spirit" required>
+                    <option value="" disabled selected>Select a spirit</option>
+                    <option value="vodka">Vodka</option>
+                    <option value="gin">Gin</option>
+                    <option value="rum">Rum</option>
+                    <option value="tequila">Tequila</option>
+                    <option value="whiskey">Whiskey</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mixer">Choose Your Mixer:</label>
+                <select id="mixer" name="mixer" required>
+                    <option value="" disabled selected>Select a mixer</option>
+                    <option value="cranberry-juice">Cranberry Juice</option>
+                    <option value="tonic-water">Tonic Water</option>
+                    <option value="orange-juice">Orange Juice</option>
+                    <option value="cola">Cola</option>
+                    <option value="soda-water">Soda Water</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="garnish">Choose Your Garnish:</label>
+                <select id="garnish" name="garnish" required>
+                    <option value="" disabled selected>Select a garnish</option>
+                    <option value="lime-wedge">Lime Wedge</option>
+                    <option value="mint-leaves">Mint Leaves</option>
+                    <option value="orange-slice">Orange Slice</option>
+                    <option value="maraschino-cherry">Maraschino Cherry</option>
+                    <option value="lemon-twist">Lemon Twist</option>
+                </select>
+            </div>
+            <button type="submit" id="build-drink-button" class="drink-button">Build My Drink</button>
+        </form>
+        <div id="drink-output" class="drink-output"></div>
+    </section>
+{% endblock %}

@@ -1,0 +1,105 @@
+.menu-speech {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    gap: 20px;
+}
+
+.menu-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.menu-speech-content {
+    max-width: 600px;
+    padding: 30px;
+    text-align: right;
+    opacity: 0; /* Start invisible */
+    transform: translateY(40px); /* Start slightly below */
+    transition: opacity 4s, transform 4s;
+}
+
+.fade-up-in {
+    opacity: 1;
+    transform: translateY(0); /* Move to its original position */
+}
+
+.menu {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.menu-category h2 {
+    margin-bottom: 25px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-item {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-item-content {
+    padding: 15px;
+}
+
+.menu-item-content .price {
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--clr-orange);
+}
+
+.menu-item-content .allergies {
+    font-size: var(--size-base);
+    color: #ff8a80;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu-speech {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .menu-image img {
+        width: 200px; /* Adjust image size for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .menu-speech-content {
+        max-width: 90%;
+    }
+
+    .menu {
+        padding: 0 20px;
+    }
+}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Reservations - The Opulent Haven Lounge{% endblock %}
+
+{% block content %}
+    <section class="reservations-page">
+        <h1>All Our Reservations</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Guests</th>
+                    <th>Table Number</th>
+                    <th>Special Requests</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.name }}</td>
+                    <td>{{ reservation.contact }}</td>
+                    <td>{{ reservation.email }}</td>
+                    <td>{{ reservation.date }}</td>
+                    <td>{{ reservation.time.strftime('%H:%M:%S') }}</td>
+                    <td>{{ reservation.guests }}</td>
+                    <td>{{ reservation.table_number }}</td>
+                    <td>{{ reservation.special_requests or 'N/A' }}</td>
+                    <td>{{ reservation.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
