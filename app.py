@@ -5,6 +5,7 @@ from datetime import datetime, time
 from sqlalchemy.types import Date, Time
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask_migrate import Migrate
+import psycopg2
 
 app = Flask(__name__)
 
@@ -20,7 +21,12 @@ app.config['MAIL_DEFAULT_SENDER'] = 'theopulenthaven03@gmail.com'
 mail = Mail(app)
 
 # Configure SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reservations.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reservations.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgres://u9t4vc9em6mvqr:pcb501b12f7ac8dc685af4002a8cdb8f303965f43a2c8acda953903b46d86fd3f@c3gavqucrhq10.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/db7jndkrc2g70d')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://u9t4vc9em6mvqr:pcb501b12f7ac8dc685af4002a8cdb8f303965f43a2c8acda953903b46d86fd3f@c3gavqucrhq10.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/db7jndkrc2g70d'
+#DATABASE_URL = os.environ['DATABASE_URL']
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
